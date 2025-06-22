@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-app
+  description: Sample Python application
+  tags:
+    - python
+spec:
+  type: service
+  lifecycle: experimental
+  owner: your-email@domain.com
