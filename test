@@ -1,7 +1,1 @@
-- id: publish
-  name: Publish to GitHub
-  action: publish:github
-  input:
-    description: "Generated Python app with Docker/K8s/Azure DevOps"
-    repoUrl: github.com?owner=YOUR_GITHUB_ORG&repo=${{ parameters.repoName }}
-    repoVisibility: public
+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
