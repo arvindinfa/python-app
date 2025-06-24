@@ -845,6 +845,19 @@ SyntaxError: Unexpected token '?'
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
 
 
+# Remove old node (optional, but recommended)
+sudo apt-get remove nodejs
+
+# Install NodeSource setup script for Node 20 (LTS)
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
+# Install nodejs
+sudo apt-get install -y nodejs
+
+# Check version
+node -v
+
+
 
 lsof -i :3000
 
