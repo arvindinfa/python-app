@@ -1,4 +1,51 @@
-scaffolder:
-  templates:
-    - /root/backstage-dev/templates/python-devops-template/template.yaml
-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
+root@Testvm:~/backstage-dev# yarn start
+Starting app, backend
+
+YAMLParseError: Implicit keys need to be on a single line at line 100, column 1:
+
+
+B
+^
+
+    at Composer.onError (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:70:34)
+    at Object.resolveBlockMap (/root/backstage-dev/node_modules/yaml/dist/compose/resolve-block-map.js:48:17)
+    at resolveCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+    at Object.composeCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:59:16)
+    at Object.composeNode (/root/backstage-dev/node_modules/yaml/dist/compose/compose-node.js:33:38)
+    at Object.composeDoc (/root/backstage-dev/node_modules/yaml/dist/compose/compose-doc.js:35:23)
+    at Composer.next (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:150:40)
+    at next (<anonymous>)
+    at Composer.compose (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:132:25)
+    at compose.next (<anonymous>)
+
+root@Testvm:~/backstage-dev# Loading config from MergedConfigSource{FileConfigSource{path="/root/backstage-dev/app-config.yaml"}, FileConfigSource{path="/root/backstage-dev/app-config.local.yaml"}, EnvConfigSource{count=0}}
+/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:70
+                this.errors.push(new errors.YAMLParseError(pos, code, message));
+                                 ^
+
+YAMLParseError: Implicit keys need to be on a single line at line 100, column 1:
+
+
+B
+^
+
+    at Composer.onError (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:70:34)
+    at Object.resolveBlockMap (/root/backstage-dev/node_modules/yaml/dist/compose/resolve-block-map.js:48:17)
+    at resolveCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:13:27)
+    at Object.composeCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:59:16)
+    at Object.composeNode (/root/backstage-dev/node_modules/yaml/dist/compose/compose-node.js:33:38)
+    at Object.composeDoc (/root/backstage-dev/node_modules/yaml/dist/compose/compose-doc.js:35:23)
+    at Composer.next (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:150:40)
+    at next (<anonymous>)
+    at Composer.compose (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:132:25)
+    at compose.next (<anonymous>)
+    at parseDocument (/root/backstage-dev/node_modules/yaml/dist/public-api.js:46:16)
+    at Object.parse (/root/backstage-dev/node_modules/yaml/dist/public-api.js:68:17)
+    at FileConfigSource.parseYamlContent (/root/backstage-dev/node_modules/@backstage/config-loader/src/sources/utils.ts:49:23)
+    at readConfigFile (/root/backstage-dev/node_modules/@backstage/config-loader/src/sources/FileConfigSource.ts:169:45)
+    at async FileConfigSource.readConfigData (/root/backstage-dev/node_modules/@backstage/config-loader/src/sources/FileConfigSource.ts:189:22)
+    at async Promise.all (index 0) {
+  code: 'MULTILINE_IMPLICIT_KEY',
+  pos: [ 3693, 3810 ],
+  linePos: [ { line: 100, col: 1 }, { line: 158, col: 2 } ]
+}
