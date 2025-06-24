@@ -905,7 +905,27 @@ The following packages have unmet dependencies:
        Recommends: node-tap but it is not going to be installed
 E: Unable to correct problems, you have held broken packages.
 
+Remove old nodejs/npm (if any):
 
+bash
+Copy
+Edit
+apt-get remove --purge nodejs npm
+apt-get autoremove
+Install Node.js LTS (includes npm):
+
+bash
+Copy
+Edit
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
+Check versions:
+
+bash
+Copy
+Edit
+node -v
+npm -v
 
 
 lsof -i :3000
