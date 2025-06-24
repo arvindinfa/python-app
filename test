@@ -1,3 +1,5 @@
+https://raw.githubusercontent.com/arvindinfa/python-app/main/catalog-info.yaml
+
 Prerequisites on VM1
 	Ubuntu or similar OS
 	Node.js & Yarn (sudo apt-get install -y nodejs yarn)
