@@ -930,5 +930,7 @@ npm -v
 
 lsof -i :3000
 
-
+  https://raw.githubusercontent.com/arvindinfa/python-app/main/catalog-info.yaml
+  
+   https://github.com/arvindinfa/python-app/main/catalog-info.yaml
 kill -9 1389
