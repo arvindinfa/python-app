@@ -1,2 +1,3 @@
-templates:
+scaffolder:
+  templates:
     - ./templates/python-devops-template/template.yaml
