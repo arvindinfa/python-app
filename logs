@@ -1,51 +1,9 @@
-root@Testvm:~/backstage-dev# yarn start
-Starting app, backend
+2025-06-24T19:24:43.103Z rootHttpRouter info [2025-06-24T19:24:43.103Z] "GET /api/catalog/entity-facets?facet=metadata.tags&filter=kind%3Dtemplate HTTP/1.1" 304 0 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" type="incomingRequest" date="2025-06-24T19:24:43.103Z" method="GET" url="/api/catalog/entity-facets?facet=metadata.tags&filter=kind%3Dtemplate" status=304 httpVersion="1.1" userAgent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" referrer="http://localhost:3000/"
+2025-06-24T19:25:41.770Z catalog warn YAML error at file:/root/backstage-dev/templates/python-devops-template/template.yaml, YAMLParseError: Nested mappings are not allowed in compact mappings at line 5, column 10:
 
-YAMLParseError: Implicit keys need to be on a single line at line 100, column 1:
-
-
-B
-^
-
-    at Composer.onError (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:70:34)
-    at Object.resolveBlockMap (/root/backstage-dev/node_modules/yaml/dist/compose/resolve-block-map.js:48:17)
-    at resolveCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:13:27)
-    at Object.composeCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:59:16)
-    at Object.composeNode (/root/backstage-dev/node_modules/yaml/dist/compose/compose-node.js:33:38)
-    at Object.composeDoc (/root/backstage-dev/node_modules/yaml/dist/compose/compose-doc.js:35:23)
-    at Composer.next (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:150:40)
-    at next (<anonymous>)
-    at Composer.compose (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:132:25)
-    at compose.next (<anonymous>)
-
-root@Testvm:~/backstage-dev# Loading config from MergedConfigSource{FileConfigSource{path="/root/backstage-dev/app-config.yaml"}, FileConfigSource{path="/root/backstage-dev/app-config.local.yaml"}, EnvConfigSource{count=0}}
-/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:70
-                this.errors.push(new errors.YAMLParseError(pos, code, message));
-                                 ^
-
-YAMLParseError: Implicit keys need to be on a single line at line 100, column 1:
-
-
-B
-^
-
-    at Composer.onError (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:70:34)
-    at Object.resolveBlockMap (/root/backstage-dev/node_modules/yaml/dist/compose/resolve-block-map.js:48:17)
-    at resolveCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:13:27)
-    at Object.composeCollection (/root/backstage-dev/node_modules/yaml/dist/compose/compose-collection.js:59:16)
-    at Object.composeNode (/root/backstage-dev/node_modules/yaml/dist/compose/compose-node.js:33:38)
-    at Object.composeDoc (/root/backstage-dev/node_modules/yaml/dist/compose/compose-doc.js:35:23)
-    at Composer.next (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:150:40)
-    at next (<anonymous>)
-    at Composer.compose (/root/backstage-dev/node_modules/yaml/dist/compose/composer.js:132:25)
-    at compose.next (<anonymous>)
-    at parseDocument (/root/backstage-dev/node_modules/yaml/dist/public-api.js:46:16)
-    at Object.parse (/root/backstage-dev/node_modules/yaml/dist/public-api.js:68:17)
-    at FileConfigSource.parseYamlContent (/root/backstage-dev/node_modules/@backstage/config-loader/src/sources/utils.ts:49:23)
-    at readConfigFile (/root/backstage-dev/node_modules/@backstage/config-loader/src/sources/FileConfigSource.ts:169:45)
-    at async FileConfigSource.readConfigData (/root/backstage-dev/node_modules/@backstage/config-loader/src/sources/FileConfigSource.ts:189:22)
-    at async Promise.all (index 0) {
-  code: 'MULTILINE_IMPLICIT_KEY',
-  pos: [ 3693, 3810 ],
-  linePos: [ { line: 100, col: 1 }, { line: 158, col: 2 } ]
-}
+  title: Python App: Docker, K8s, Azure DevOps (CI/CD)
+         ^
+ entity="location:default/generated-40de80b4cef3fb28ab79344bfa66a4704b726601" location="file:/root/backstage-dev/templates/python-devops-template/template.yaml"
+2025-06-24T19:26:19.250Z rootHttpRouter info [2025-06-24T19:26:19.250Z] "POST /api/permission/authorize HTTP/1.1" 200 108 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" type="incomingRequest" date="2025-06-24T19:26:19.250Z" method="POST" url="/api/permission/authorize" status=200 httpVersion="1.1" userAgent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" contentLength=108 referrer="http://localhost:3000/"
+2025-06-24T19:26:19.261Z rootHttpRouter info [2025-06-24T19:26:19.261Z] "POST /api/permission/authorize HTTP/1.1" 200 108 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" type="incomingRequest" date="2025-06-24T19:26:19.261Z" method="POST" url="/api/permission/authorize" status=200 httpVersion="1.1" userAgent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0" contentLength=108 referrer="http://localhost:3000/"
+2025-06-24T19:26:19.264Z rootHttpRouter info [2025-06-24T19:26:19.264Z] "POST /api/permission/authorize HTTP/1.1" 200 108 "http://localhost:3000/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; r
