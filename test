@@ -926,7 +926,7 @@ Copy
 Edit
 node -v
 npm -v
-
+https://raw.githubusercontent.com/arvindinfa/python-app/refs/heads/main/catalog-info.yaml
 
 lsof -i :3000
 
