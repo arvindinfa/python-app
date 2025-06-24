@@ -5,5 +5,5 @@ metadata:
   description: Python App deployed via Backstage template (Ubuntu example)
 spec:
   type: service
-  owner: your-team
+  owner: Orion Innovation
   lifecycle: experimental
