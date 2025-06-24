@@ -1,0 +1,55 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: python-devops-template
+  title: Python App: Docker, K8s, Azure DevOps (CI/CD)
+  description: Scaffolds a Python app with Docker, Kubernetes, and Azure DevOps pipeline.
+spec:
+  owner: your-email@example.com
+  type: service
+
+  parameters:
+    - title: Project Details
+      required: [repoName, dockerImage]
+      properties:
+        repoName:
+          title: GitHub Repository Name
+          type: string
+          description: Name of the new repository to create
+        dockerImage:
+          title: Docker Image Name
+          type: string
+          description: e.g. myacr.azurecr.io/pythonapp
+
+  steps:
+    - id: fetchSkeleton
+      name: Fetch base skeleton
+      action: fetch:template
+      input:
+        url: ./skeleton
+        values:
+          repoName: ${{ parameters.repoName }}
+          dockerImage: ${{ parameters.dockerImage }}
+
+    - id: publish
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        allowedHosts: ['github.com']
+        description: "Generated Python app with Docker/K8s/Azure DevOps"
+        repoUrl: github.com?owner=YOUR_GITHUB_ORG&repo=${{ parameters.repoName }}
+        repoVisibility: public
+
+    - id: register
+      name: Register in Backstage catalog
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps.publish.output.repoContentsUrl }}
+        catalogInfoPath: '/catalog-info.yaml'
+
+  output:
+    links:
+      - title: GitHub Repository
+        url: ${{ steps.publish.output.remoteUrl }}
+      - title: Open in catalog
+        url: /catalog/default/component/${{ parameters.repoName }}
