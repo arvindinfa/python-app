@@ -1,7 +1,12 @@
 export GITHUB_TOKEN=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
 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
 curl -H "Authorization: token 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" https://api.github.com/user
+Error
 
+HttpError
+Message
+
+Bad credentials - https://docs.github.com/rest
 
 vm:~/backstage-dev# curl -H "Authorization: token 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" https://api.github.com/user
 {
