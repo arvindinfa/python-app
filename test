@@ -11,3 +11,9 @@ root@Testvm:~/backstage-dev# curl -H "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" 
 
 
 curl -H "Authorization: token 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" https://api.github.com/user
+root@Testvm:~/backstage-dev# curl -H "Authorization: token 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" https://api.github.com/user
+{
+  "message": "Bad credentials",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "401"
+}
