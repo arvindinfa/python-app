@@ -3,6 +3,12 @@ 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
 curl -H "Authorization: token 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" https://api.github.com/user
 
 
+t@Testvm:~/backstage-dev# curl -H "Authorization: token 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" https://api.github.com/user
+{
+  "message": "Bad credentials",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "401"
+}
 
 Error
 
