@@ -39,3 +39,11 @@ When using Node.js version 20 or newer, the scaffolder backend plugin requires t
     at async requestWithGraphqlErrorHandling (/root/backstage-dev/node_modules/@octokit/plugin-retry/dist-node/index.js:71:20)
 20
     at async Job.doExecute (/root/backstage-dev/node_modules/bottleneck/light.js:405:18)
+
+
+export NODE_OPTIONS=--no-node-snapshot
+yarn start
+echo 'export NODE_OPTIONS=--no-node-snapshot' >> ~/.bashrc
+source ~/.bashrc
+yarn start
+NODE_OPTIONS=--no-node-snapshot yarn start
