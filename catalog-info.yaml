@@ -4,9 +4,8 @@ metadata:
   name: ${{ values.repoName }}
   description: Python app scaffolded by Backstage template.
   annotations:
-    github.com/project-slug: YOUR_GITHUB_ORG/${{ values.repoName }}
+    github.com/project-slug: arvindinfa/${{ values.repoName }}
 spec:
   type: service
   owner: default-team
   lifecycle: experimental
-
