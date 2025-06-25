@@ -10,7 +10,7 @@ root@Testvm:~/backstage-dev# curl -H "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" 
 
 
 
-curl -H "Authorization: token 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" https://api.github.com/user
+curl -H "Authorization: token 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" https://api.github.com/user
 root@Testvm:~/backstage-dev# curl -H "Authorization: token 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" https://api.github.com/user
 {
   "message": "Bad credentials",
