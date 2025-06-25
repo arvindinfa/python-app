@@ -7,3 +7,7 @@ root@Testvm:~/backstage-dev# curl -H "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" 
   "documentation_url": "https://docs.github.com/rest/users/users#get-the-authenticated-user",
   "status": "401"
 }
+
+
+
+curl -H "Authorization: token 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" https://api.github.com/user
