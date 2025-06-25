@@ -1,1 +1,9 @@
-curl -H "" https://api.github.com/user
+curl -H "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" https://api.github.com/user
+
+
+root@Testvm:~/backstage-dev# curl -H "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" https://api.github.com/user
+{
+  "message": "Requires authentication",
+  "documentation_url": "https://docs.github.com/rest/users/users#get-the-authenticated-user",
+  "status": "401"
+}
