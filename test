@@ -47,3 +47,17 @@ echo 'export NODE_OPTIONS=--no-node-snapshot' >> ~/.bashrc
 source ~/.bashrc
 yarn start
 NODE_OPTIONS=--no-node-snapshot yarn start
+
+
+15
+2025-06-25T11:47:40.000Z Beginning step Publish to GitHub
+16
+2025-06-25T11:47:41.000Z HttpError: Bad credentials - https://docs.github.com/rest
+17
+    at /root/backstage-dev/node_modules/@octokit/request/dist-node/index.js:125:21
+18
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+19
+    at async requestWithGraphqlErrorHandling (/root/backstage-dev/node_modules/@octokit/plugin-retry/dist-node/index.js:71:20)
+20
+    at async Job.doExecute (/root/backstage-dev/node_modules/bottleneck/light.js:405:18)
