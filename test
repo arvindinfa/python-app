@@ -1,6 +1,9 @@
-export GITHUB_TOKEN=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
-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
-curl -H "Authorization: token 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" https://api.github.com/user
+export GITHUB_TOKEN=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
+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
+curl -H "Authorization: token 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" https://api.github.com/user
+
+
+
 Error
 
 HttpError
