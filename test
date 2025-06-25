@@ -17,7 +17,7 @@ root@Testvm:~/backstage-dev# curl -H "Authorization: token ghp_USqHr18VasDckq183
   "documentation_url": "https://docs.github.com/rest",
   "status": "401"
 }
-
+export NODE_OPTIONs=--no-node-snapshot
 
 root@Testvm:~/backstage-dev# curl -H "Authorization: token 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" https://api.github.com/user
 {
@@ -25,7 +25,8 @@ root@Testvm:~/backstage-dev# curl -H "Authorization: token ghp_USqHr18VasDckq183
   "documentation_url": "https://docs.github.com/rest",
   "status": "401"
 }
-
+When using Node.js version 20 or newer, the scaffolder backend plugin requires that it be started with the --no-node-snapshot option. 
+        Please make sure that you have NODE_OPTIONS=--no-node-snapshot in your environmen
 15
 2025-06-25T05:38:45.000Z Beginning step Publish to GitHub
 16
