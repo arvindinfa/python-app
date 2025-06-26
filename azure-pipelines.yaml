@@ -1,0 +1,72 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  # Use your own Docker registry, repo, image names here
+  DOCKER_IMAGE: $(Build.Repository.Name):$(Build.BuildId)
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.x'
+
+    - script: |
+        pip install -r requirements.txt
+      displayName: 'Install dependencies'
+
+    - task: Docker@2
+      displayName: Build Docker image
+      inputs:
+        command: build
+        Dockerfile: '**/Dockerfile'
+        tags: |
+          $(DOCKER_IMAGE)
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+
+- stage: Deploy_Minikube
+  jobs:
+  - deployment: DeployMinikube
+    environment: 'minikube'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: self
+          - script: |
+              minikube start
+              minikube image load $(DOCKER_IMAGE)
+              kubectl apply -f k8s/deployment.yaml
+              kubectl apply -f k8s/service.yaml
+            displayName: 'Deploy to Minikube'
+
+- stage: Deploy_AKS
+  jobs:
+  - deployment: DeployAKS
+    environment: 'aks'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: self
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: 'conn_1'
+              scriptType: bash
+              scriptLocation: inlineScript
+              inlineScript: |
+                az aks get-credentials --resource-group testrg --name acrtestrg001
+                kubectl apply -f k8s/deployment.yaml
+                kubectl apply -f k8s/service.yaml
+            displayName: 'Deploy to AKS'
