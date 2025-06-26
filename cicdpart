@@ -44,3 +44,20 @@ steps:
     configuration: |
       k8s/deployment.yaml
       k8s/service.yaml
+
+
+
+Add Annotations to catalog-info.yaml
+metadata:
+  annotations:
+    github.com/project-slug: arvindinfa/repo4000
+    dev.azure.com/project: "<YOUR_ORG>/<YOUR_PROJECT>/_build?definitionId=<PIPELINE_ID>"
+dev.azure.com/project: "arvindinfadevops/SampleProject/_build?definitionId=12"
+
+
+app-config.yaml
+integrations:
+  azure:
+    - host: dev.azure.com
+      token: ${AZURE_TOKEN}
+
