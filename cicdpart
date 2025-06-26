@@ -1,0 +1,46 @@
+minikube start
+# Use Minikube’s Docker daemon
+eval $(minikube docker-env)
+docker build -t dock1982:latest .
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+kubectl get pods
+kubectl get svc
+minikube service <service-name> --url
+
+
+Step 2.1: Review/Edit your azure-pipelines.yaml
+  trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  azureContainerRegistry: <your_acr_name>.azurecr.io
+  imageName: $(Build.Repository.Name)
+
+steps:
+- task: Docker@2
+  displayName: Build and push image to ACR
+  inputs:
+    command: buildAndPush
+    repository: $(azureContainerRegistry)/$(imageName)
+    dockerfile: Dockerfile
+    containerRegistry: '<ServiceConnectionToACR>'
+    tags: |
+      $(Build.BuildId)
+
+- task: Kubernetes@1
+  displayName: Deploy to AKS
+  inputs:
+    connectionType: 'Azure Resource Manager'
+    azureSubscriptionEndpoint: 'conn_1'
+    azureResourceGroup: 'testrg'
+    kubernetesCluster: 'acrtestrg001'
+    namespace: 'default'
+    command: apply
+    useConfigurationFile: true
+    configuration: |
+      k8s/deployment.yaml
+      k8s/service.yaml
