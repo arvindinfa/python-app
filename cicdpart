@@ -1,5 +1,5 @@
 minikube start
-# Use Minikube’s Docker daemon
+
 eval $(minikube docker-env)
 docker build -t dock1982:latest .
 kubectl apply -f k8s/deployment.yaml
@@ -9,7 +9,7 @@ kubectl get svc
 minikube service <service-name> --url
 
 
-Review/Edit your azure-pipelines.yaml
+azure-pipelines.yaml
   trigger:
 - main
 
@@ -47,12 +47,12 @@ steps:
 
 
 
-Add Annotations to catalog-info.yaml
+catalog-info.yaml
 metadata:
   annotations:
     github.com/project-slug: arvindinfa/repo4000
-    dev.azure.com/project: "<YOUR_ORG>/<YOUR_PROJECT>/_build?definitionId=<PIPELINE_ID>"
-dev.azure.com/project: "arvindinfadevops/SampleProject/_build?definitionId=12"
+    dev.azure.com/project: "arvindinfadevops/SampleProject/_build?definitionId=12"
+
 
 
 app-config.yaml
