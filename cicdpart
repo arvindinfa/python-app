@@ -1,4 +1,4 @@
-minikube start
+minikube start --driver=docker --force
 
 eval $(minikube docker-env)
 docker build -t dock1982:latest .
