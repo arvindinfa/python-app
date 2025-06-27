@@ -1,0 +1,46 @@
+yarn add @backstage/plugin-azure-devops
+
+app-config.yaml
+
+azureDevOps:
+  organization: my-org
+  api:
+    baseUrl: https://dev.azure.com
+    personalAccessToken: ${AZURE_DEVOPS_PAT}
+
+
+catalog-info.yaml
+
+metadata:
+  annotations:
+    azure.com/project: my-project-name
+    azure.com/repo: my-repo-name
+
+
+Inside the UI
+<AzureDevOpsCard />
+
+Integrate
+
+yarn add @backstage/plugin-kubernetes
+
+
+kubernetes:
+  serviceLocatorMethod:
+    type: multiTenant
+  clusterLocatorMethods:
+    - type: config
+      clusters:
+        - url: https://my-cluster.example.com
+          name: my-cluster
+          authProvider: serviceAccount
+
+
+catalog-info.yaml
+
+metadata:
+  annotations:
+    backstage.io/kubernetes-id: my-service
+
+
+Place <KubernetesDrawer />, <KubernetesContent />
