@@ -9,7 +9,7 @@ kubectl get svc
 minikube service <service-name> --url
 
 
-Step 2.1: Review/Edit your azure-pipelines.yaml
+Review/Edit your azure-pipelines.yaml
   trigger:
 - main
 
