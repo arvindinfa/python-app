@@ -61,3 +61,31 @@ integrations:
     - host: dev.azure.com
       token: BO9YQdTZ92zr4naE7yy54Gbz0aAGjVpLV1Dof0Qr5rwIMvNXTs6gJQQJ99BFACAAAAAAAAAAAAASAZDO2O9e
 
+
+
+Install Minikube
+
+	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+	
+Install Docker
+	sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo \
+	  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+	  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+		sudo apt-get update
+		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+	
+		sudo usermod -aG docker $USER
+		# You may need to log out and log back in for this to take effect
+	
+minikube start --driver=docker
+	========================== Done
+Install ArgoCD
+	sudo snap install kubectl --classic
+	kubectl create namespace argocd
+	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+	kubectl port-forward svc/argocd-server -n argocd 8080:443
+
