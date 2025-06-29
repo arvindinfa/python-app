@@ -1,47 +1,9 @@
-oaded config from app-config.yaml
-/home/azureuser/Desktop/backstage-dev/node_modules/webpack-dev-server/lib/Server.js:2638
-        throw error;
-        ^
-
-Error: listen EADDRINUSE: address already in use 127.0.0.1:3000
-    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
-    at listenInCluster (node:net:1865:12)
-    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2014:7)
-    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:8) {
-  code: 'EADDRINUSE',
-  errno: -98,
-  syscall: 'listen',
-  address: '127.0.0.1',
-  port: 3000
-}
-
-Node.js v18.20.8
-azureuser@vm400:~/Desktop/backstage-dev$ Loading config from MergedConfigSource{FileConfigSource{path="/home/azureuser/Desktop/backstage-dev/app-config.yaml"}, FileConfigSource{path="/home/azureuser/Desktop/backstage-dev/app-config.local.yaml"}, EnvConfigSource{count=0}}
-2025-06-29T10:47:07.530Z backstage info Found 2 new secrets in config that will be redacted 
-node:internal/errors:496
-    ErrorCaptureStackTrace(err);
-    ^
-
-Error: listen EADDRINUSE: address already in use :::7007
-    at __node_internal_captureLargerStackTrace (node:internal/errors:496:5)
-    at __node_internal_uvExceptionWithHostPort (node:internal/errors:593:12)
-    at Server.setupListenHandle [as _listen2] (node:net:1817:16)
-    at listenInCluster (node:net:1865:12)
-    at Server.listen (node:net:1953:7)
-    at <anonymous> (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-defaults/src/entrypoints/rootHttpRouter/http/createHttpServer.ts:46:16)
-    at new Promise (<anonymous>)
-    at Server.start (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-defaults/src/entrypoints/rootHttpRouter/http/createHttpServer.ts:37:14)
-    at Object.factory (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-defaults/src/entrypoints/rootHttpRouter/rootHttpRouterServiceFactory.ts:146:20)
-    at async Promise.all (index 0)
-    at ServiceRegistry.initializeEagerServicesWithScope (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-app-api/src/wiring/ServiceRegistry.ts:242:11)
-    at BackendInitializer.#doStart (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-app-api/src/wiring/BackendInitializer.ts:262:11)
-    at BackendInitializer.start (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-app-api/src/wiring/BackendInitializer.ts:245:5)
-    at BackstageBackend.start (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/backend-app-api/src/wiring/BackstageBackend.ts:38:11) {
-  code: 'EADDRINUSE',
-  errno: -98,
-  syscall: 'listen',
-  address: '::',
-  port: 7007
-}
-
-Node.js v18.20.8
+2025-06-29T10:54:47.000Z HttpError: Bad credentials - https://docs.github.com/rest
+12
+    at /home/azureuser/Desktop/backstage-dev/node_modules/@octokit/request/dist-node/index.js:125:21
+13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+14
+    at async requestWithGraphqlErrorHandling (/home/azureuser/Desktop/backstage-dev/node_modules/@octokit/plugin-retry/dist-node/index.js:71:20)
+15
+    at async Job.doExecute (/home/azureuser/Desktop/backstage-dev/node_modules/bottleneck/light.js:405:18
