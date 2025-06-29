@@ -1,0 +1,163 @@
+Prerequisites on VM1
+	Ubuntu or similar OS
+	Node.js & Yarn (sudo apt-get install -y nodejs yarn)
+	Docker (for building images)
+	Git
+	Access to Azure, GitHub, and ACR credentials
+Enable GUI
+sudo apt update
+sudo apt install xfce4 xfce4-goodies -y
+sudo apt install ubuntu-desktop -y
+
+
+sudo apt install xrdp -y
+sudo systemctl enable xrdp
+sudo systemctl start xrdp
+
+echo xfce4-session > ~/.xsession
+sudo ufw allow 3389/tcp
+
+Open Port 3389 in Azure NSG:
+
+Go to the Azure Portal > Your VM > Networking > Network Security Group.
+
+Add an inbound security rule:
+	Port: 3389
+	Protocol: TCP
+	Source: (your public IP for security, or "Any" for testing)
+	Action: Allow
+
+Node.js & Yarn (sudo apt-get install -y nodejs yarn)
+	sudo apt-get update
+	sudo apt-get upgrade -y
+	
+	curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+	sudo apt-get install -y nodejs
+	
+	Verify Node.js:
+		node -v
+		npm -v
+	
+	Yarn:
+	
+		sudo npm install -g yarn
+		yarn -v
+	
+Install Docker:
+	
+	sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo \
+	  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+	  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+		sudo apt-get update
+		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+	
+		sudo usermod -aG docker $USER
+		# You may need to log out and log back in for this to take effect
+
+Install Git:
+	sudo apt-get install -y git
+	git --version
+
+
+Azure CLI
+	curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+	
+	az --version
+	
+Access to Azure, GitHub, and ACR Credentials
+	az login
+	
+	Personal GitHub account or org, and a Personal Access Token (PAT) with repo access.
+	
+Get your ACR login server name from Azure Portal (e.g., myregistry.azurecr.io).
+
+
+Install and Set Up Backstage
+	npx @backstage/create-app
+	cd backstage-dev
+	yarn install
+	yarn start
+	
+	ssh -L 3000:localhost:3000 azureuser@172.191.189.70
+
+
+/home/azureuser/python-app
+	vi app.py
+		from flask import Flask
+		app = Flask(__name__)
+		@app.route("/")
+		def hello():
+			return "Hello from Backstage Python app!"
+		if __name__ == "__main__":
+			app.run(host="0.0.0.0", port=80)
+	
+	vi requirements.txt
+		flask
+	vi Dockerfile
+			FROM python:3.11-slim
+			WORKDIR /app
+			COPY requirements.txt .
+			RUN pip install -r requirements.txt
+			COPY . .
+			CMD ["python", "app.py"]
+
+Initialize Git and Push to GitHub
+	cd /home/azureuser/python-app
+	git init
+	git add .
+	git commit -m "Initial commit"
+
+Add Remote & Push:
+	git remote add origin https://github.com/arvindinfa/python-app.git
+	git branch -M main
+	git push -u origin main
+
+
+PAT:
+
+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
+
+Log In to Azure and ACR
+	az login
+	az acr login --name acrtestrg001 --expose-token
+	or docker login acrtestrg001.azurecr.io
+	username : acrtestrg001
+	password : sZ1e/ksMIwsVo9mxiY71LxzNYFHRq0Rabo1s2xaHuU+ACRAjZaws
+	
+	
+Build and Push
+	cd /home/azureuser/python-app
+	docker build -t acrtestrg001.azurecr.io/python-app:latest .
+	docker push acrtestrg001.azurecr.io/python-app:latest
+
+
+
+Now VM2
+Install Minikube
+
+	curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+	sudo install minikube-linux-amd64 /usr/local/bin/minikube
+	
+Install Docker
+	sudo apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+	echo \
+	  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+	  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+		sudo apt-get update
+		sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+	
+		sudo usermod -aG docker $USER
+		# You may need to log out and log back in for this to take effect
+	
+minikube start --driver=docker
+	========================== Done
+Install ArgoCD
+	sudo snap install kubectl --classic
+	kubectl create namespace argocd
+	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+	kubectl port-forward svc/argocd-server -n argocd 8080:443
