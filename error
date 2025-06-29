@@ -165,3 +165,7 @@ kubernetes:
 permission:
   # setting this to `false` will disable permissions
   enabled: true
+
+
+curl -H "Authorization: token ghp_abcdEFGHijklMNOPqrstUVWXyz1234567890" https://api.github.com/user
+
