@@ -75,9 +75,23 @@ yarn start
 NODE_OPTIONS=--no-node-snapshot yarn start
 
 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
-- id: publish
-  name: Publish to GitHub
-  action: publish:github
-  input:
-    repoUrl: github.com?owner=arvind982&repo=testnrep111
+
+
+
+
+
+025-06-29T10:25:42.000Z InputError: No token available for host: github.com, with owner arvind982, and repo testnrep111. Make sure GitHub auth is configured correctly. See https://backstage.io/docs/auth/github/provider
+ for more details.
+12
+    at Object.getOctokitOptions (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend-module-github/src/util.ts:108:11)
+13
+    at Object.handler (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend-module-github/src/actions/github.ts:158:30)
+14
+    at NunjucksWorkflowRunner.executeStep (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/NunjucksWorkflowRunner.ts:379:9)
+15
+    at NunjucksWorkflowRunner.execute (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/NunjucksWorkflowRunner.ts:523:9)
+16
+    at TaskWorker.runOneTask (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/TaskWorker.ts:204:26)
+17
+    at async run (/home/azureuser/Desktop/backstage-dev/node_modules/p-queue/dist/index.js:163:29)
 
