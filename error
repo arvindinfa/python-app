@@ -237,3 +237,41 @@ azureuser@vm400:~/Desktop/backstage-dev$ curl -H "Authorization: token ghp_BCYQv
     at async requestWithGraphqlErrorHandling (/home/azureuser/Desktop/backstage-dev/node_modules/@octokit/plugin-retry/dist-node/index.js:71:20)
 15
     at async Job.doExecute (/home/azureuser/Desktop/backstage-dev/node_modules/bottleneck/light.js:405:18)
+
+
+
+2025-06-29T12:05:26.000Z info: Fetching template content from remote URL
+3
+2025-06-29T12:05:26.000Z info: Listing files and directories in template
+4
+2025-06-29T12:05:26.000Z info: Processing 3 template files/directories with input values {"name":"github111"}
+5
+2025-06-29T12:05:26.000Z info: Writing file catalog-info.yaml to template output path with mode 33204.
+6
+2025-06-29T12:05:26.000Z info: Writing file index.js to template output path with mode 33204.
+7
+2025-06-29T12:05:27.000Z info: Writing file package.json to template output path with mode 33204.
+8
+2025-06-29T12:05:27.000Z info: Template result written to /tmp/c04b244b-ea0a-4fe4-bed1-7873ade00dde
+9
+2025-06-29T12:05:27.000Z Finished step Fetch Base
+10
+2025-06-29T12:05:27.000Z Beginning step Publish
+11
+2025-06-29T12:05:27.000Z HttpError: Bad credentials - https://docs.github.com/rest
+12
+    at /home/azureuser/Desktop/backstage-dev/node_modules/@octokit/request/dist-node/index.js:125:21
+13
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+14
+    at async requestWithGraphqlErrorHandling (/home/azureuser/Desktop/backstage-dev/node_modules/@octokit/plugin-retry/dist-node/index.js:71:20)
+15
+    at async Job.doExecute (/home/azureuser/Desktop/backstage-dev/node_modules/bottleneck/light.js:405:18)
+
+
+
+
+azureuser@vm400:~/Desktop/backstage-dev$ grep token app-config.yaml app-config.local.yaml 
+app-config.yaml:      # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
+app-config.yaml:      token: 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
+app-config.yaml:    #   token: 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
