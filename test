@@ -75,20 +75,9 @@ yarn start
 NODE_OPTIONS=--no-node-snapshot yarn start
 
 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
+- id: publish
+  name: Publish to GitHub
+  action: publish:github
+  input:
+    repoUrl: github.com?owner=arvind982&repo=testnrep111
 
-25-06-29T10:02:09.000Z InputError: Invalid repo URL passed to publisher: https://github.com/?ownner=arvind982&repo=testnrep111
-, missing owner
-12
-    at checkRequiredParams (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-node/src/actions/util.ts:124:13)
-13
-    at Object.parseRepoUrl (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-node/src/actions/util.ts:114:27)
-14
-    at Object.handler (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend-module-github/src/actions/github.ts:152:37)
-15
-    at NunjucksWorkflowRunner.executeStep (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/NunjucksWorkflowRunner.ts:379:22)
-16
-    at NunjucksWorkflowRunner.execute (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/NunjucksWorkflowRunner.ts:523:9)
-17
-    at TaskWorker.runOneTask (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/TaskWorker.ts:204:26)
-18
-    at async run (/home/azureuser/Desktop/backstage-dev/node_modules/p-queue/dist/index.js:163:29)
