@@ -76,15 +76,12 @@ NODE_OPTIONS=--no-node-snapshot yarn start
 
 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
 
+2025-06-29T09:43:29.000Z InputError: Invalid input passed to action publish:github, instance is not allowed to have the additional property "allowedHosts"
+12
+    at NunjucksWorkflowRunner.executeStep (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/NunjucksWorkflowRunner.ts:344:19)
+13
+    at NunjucksWorkflowRunner.execute (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/NunjucksWorkflowRunner.ts:523:9)
+14
+    at TaskWorker.runOneTask (/home/azureuser/Desktop/backstage-dev/node_modules/@backstage/plugin-scaffolder-backend/src/scaffolder/tasks/TaskWorker.ts:204:26)
 15
-2025-06-25T11:47:40.000Z Beginning step Publish to GitHub
-16
-2025-06-25T11:47:41.000Z HttpError: Bad credentials - https://docs.github.com/rest
-17
-    at /root/backstage-dev/node_modules/@octokit/request/dist-node/index.js:125:21
-18
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-19
-    at async requestWithGraphqlErrorHandling (/root/backstage-dev/node_modules/@octokit/plugin-retry/dist-node/index.js:71:20)
-20
-    at async Job.doExecute (/root/backstage-dev/node_modules/bottleneck/light.js:405:18)
+    at async run (/home/azureuser/Desktop/backstage-dev/node_modules/p-queue/dist/index.js:163:29)
