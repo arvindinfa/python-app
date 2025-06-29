@@ -169,3 +169,41 @@ permission:
 
 curl -H "Authorization: token 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" https://api.github.com/user
 
+
+azureuser@vm400:~/Desktop/backstage-dev$ curl -H "Authorization: token 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" https://api.github.com/user
+{
+  "login": "arvindinfa",
+  "id": 116159740,
+  "node_id": "U_kgDOBux0_A",
+  "avatar_url": "https://avatars.githubusercontent.com/u/116159740?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/arvindinfa",
+  "html_url": "https://github.com/arvindinfa",
+  "followers_url": "https://api.github.com/users/arvindinfa/followers",
+  "following_url": "https://api.github.com/users/arvindinfa/following{/other_user}",
+  "gists_url": "https://api.github.com/users/arvindinfa/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/arvindinfa/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/arvindinfa/subscriptions",
+  "organizations_url": "https://api.github.com/users/arvindinfa/orgs",
+  "repos_url": "https://api.github.com/users/arvindinfa/repos",
+  "events_url": "https://api.github.com/users/arvindinfa/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/arvindinfa/received_events",
+  "type": "User",
+  "user_view_type": "public",
+  "site_admin": false,
+  "name": null,
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": null,
+  "notification_email": null,
+  "public_repos": 13,
+  "public_gists": 0,
+  "followers": 0,
+  "following": 0,
+  "created_at": "2022-10-19T09:27:16Z",
+  "updated_at": "2025-06-29T08:57:25Z"
+
