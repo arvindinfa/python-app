@@ -167,5 +167,5 @@ permission:
   enabled: true
 
 
-curl -H "Authorization: token ghp_abcdEFGHijklMNOPqrstUVWXyz1234567890" https://api.github.com/user
+curl -H "Authorization: token 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" https://api.github.com/user
 
