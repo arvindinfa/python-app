@@ -1,3 +1,10 @@
+
+base64 -d python-k8s-cicd-template.zip.b64 > python-k8s-cicd-template.zip
+unzip python-k8s-cicd-template.zip
+
+
+
+
 yarn add @backstage/plugin-azure-devops
 
 app-config.yaml
